@@ -6,9 +6,6 @@ export default {
         if (request.method == 'POST') {
             try {
                 json = await request.json();
-                if (!Array.isArray(json.messages)) {
-                    throw SyntaxError(".messages array required");
-                }
             } catch (err) {
                 console.error(err.toString());
                 return new Response(err, {status: 400});
