@@ -11,6 +11,8 @@ export default {
                 return new Response(err, {status: 400});
             }
         }
+        json = JSON.stringify(json);
+        json = json.toString();
 
         const url = new URL(request.url).pathname;
         const { searchParams } = new URL(request.url);
