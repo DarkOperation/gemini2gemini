@@ -17,7 +17,6 @@ export default {
         const key = searchParams.get('key');
 
         let data;
-        console.log(json);
 
         if (request.method == 'POST') {
             data = await fetch(
