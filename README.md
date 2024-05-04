@@ -20,7 +20,7 @@ You will need a personal Google [API key](https://makersuite.google.com/app/apik
 
 ### 2. Deploy
 
- [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/PublicAffairs/openai-gemini&repository-name=my-openai-gemini)
+ [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/DarkOperation/gemini2gemini&repository-name=my-gemini2gemini)
 - Alternatively can be deployed with [cli](https://vercel.com/docs/cli):
   `vercel deploy`
 - Serve locally: `vercel dev`
