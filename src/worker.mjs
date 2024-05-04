@@ -12,7 +12,6 @@ export default {
             }
         }
         json = JSON.stringify(json);
-        json = json.toString();
 
         const url = new URL(request.url).pathname;
         const { searchParams } = new URL(request.url);
