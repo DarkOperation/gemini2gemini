@@ -16,6 +16,9 @@ export default {
         const url = new URL(request.url).pathname;
         const { searchParams } = new URL(request.url);
         const key = searchParams.get('key');
+        if (key == null) {
+            return new Response("Error: API key is null", {status: 401});
+        }
 
         let data;
 
