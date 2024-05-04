@@ -26,6 +26,8 @@ export default {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        "x-goog-api-key": key,
+                        "x-goog-api-client": "genai-js/0.5.0",
                     },
                     body: json
                 });
@@ -36,6 +38,9 @@ export default {
                     method: request.method,
                     headers: {
                         'Content-Type': 'application/json',
+                        "x-goog-api-key": key,
+                        "x-goog-api-client": "genai-js/0.5.0",
+
                     }
                 });
         }
