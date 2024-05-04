@@ -17,7 +17,7 @@ export default {
         const key = searchParams.get('key');
 
         let data;
-        console.log(json);
+        console.log(key);
 
         if (request.method == 'POST') {
             data = await fetch(
@@ -26,8 +26,6 @@ export default {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        "x-goog-api-key": key,
-                        "x-goog-api-client": "genai-js/0.5.0",
                     },
                     body: json
                 });
@@ -38,9 +36,6 @@ export default {
                     method: request.method,
                     headers: {
                         'Content-Type': 'application/json',
-                        "x-goog-api-key": key,
-                        "x-goog-api-client": "genai-js/0.5.0",
-
                     }
                 });
         }
