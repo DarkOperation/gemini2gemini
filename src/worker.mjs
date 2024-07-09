@@ -7,40 +7,33 @@ export default {
             try {
                 json = await request.json();
             } catch (err) {
-                console.error(err.toString());
-                return new Response(err, {status: 400});
+                return new Response("Error while parsing json", {status: 400});
             }
         }
         json = JSON.stringify(json);
 
-        const url = new URL(request.url).pathname;
-        const { searchParams } = new URL(request.url);
-        const key = searchParams.get('key');
-        if (key == null) {
-            return new Response("Error: API key is null", {status: 401});
-        }
-
+        const url = new URL(request.url);
         let data;
-
+        
         if (request.method == 'POST') {
-            data = await fetch(
-                `${BASE_URL}` + url + `?key=${key}`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: json
-                });
+    		data = await fetch(
+    			`${BASE_URL}` + url.pathname + url.search,
+    			{
+    				method: 'POST',
+    				headers: {
+    					'Content-Type': 'application/json',
+    				},
+    				body: json
+    			});
         } else {
             data = await fetch(
-                `${BASE_URL}` + url + `?key=${key}`,
-                {
-                    method: request.method,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                });
+    			`${BASE_URL}` + url.pathname + url.search,
+    			{
+    				method: request.method,
+    				headers: {
+    					'Content-Type': 'application/json',
+    				},
+    			});
         }
         return new Response(data.body, { status: data.status, statusText: data.statusText });
     }
