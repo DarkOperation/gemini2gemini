@@ -28,6 +28,3 @@ You will need a personal Google [API key](https://makersuite.google.com/app/apik
 
 ### 3. Enjoy!
 
-```
-P. S. Thanks https://github.com/PublicAffairs/openai-gemini for good idea
-```
